@@ -12,8 +12,11 @@ public class RedisTest {
     static final String SET_KEY = "SET:USER:LOGIN:20200327";
     static final String PF_KEY = "PF:USER:LOGIN:20200329";
     public static void main(String[] args) {
+//        new URI.Parser(str).parse(false);
 
-        Jedis c = new Jedis("redis://123456@118.25.191.81:6379");
+        Jedis c = new Jedis("118.25.191.81");
+        c.auth("a23456");
+
 
         c.set("test","test");
 //        for (int i = 0; i < 1000000; i++) {

@@ -73,8 +73,20 @@ https://blog.csdn.net/gaogaoshan/article/details/41039581
 https://blog.csdn.net/qq_17305249/article/details/89669053?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
 ```
 - watch 机制+transaction 实现 乐观锁
+```aidl
 
 ```
-docker redis 性能测试
+- docker redis 性能测试
+```
 docker exec -it 70f2d70c2897  redis-benchmark -h 127.0.0.1 -p 6379 -c 100 -n 100000
 ```
+
+- jedis /lettuce  
+[jedis lettuce 比较]（https://blog.csdn.net/jetty_welcome/article/details/104338173?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task）
+```
+| jedis
+jedis 非线程安全，使用时一般池化
+从jedispool中取资源 用完之后需要手动归还
+```
+[jedis 非线程安全分析]（https://www.jianshu.com/p/5e4a1f92c88f）
+- redis lua 实践
