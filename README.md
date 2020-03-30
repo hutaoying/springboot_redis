@@ -87,6 +87,8 @@ docker exec -it 70f2d70c2897  redis-benchmark -h 127.0.0.1 -p 6379 -c 100 -n 100
 | jedis
 jedis 非线程安全，使用时一般池化
 从jedispool中取资源 用完之后需要手动归还
+| Q lettuce 一段时间不用 连接不可用 
+https://blog.csdn.net/architect_cloud/article/details/104310782
 ```
 [jedis 非线程安全分析]（https://www.jianshu.com/p/5e4a1f92c88f）
 - redis lua 实践
