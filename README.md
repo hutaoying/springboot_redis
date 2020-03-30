@@ -90,3 +90,13 @@ jedis 非线程安全，使用时一般池化
 ```
 [jedis 非线程安全分析]（https://www.jianshu.com/p/5e4a1f92c88f）
 - redis lua 实践
+
+- redis缓存常用实现方式  1 redisTemplate  2 spring cache
+```
+@C
+
+```
+- RDB
+- AOF
+
+https://baijiahao.baidu.com/s?id=1660009541007805174&wfr=spider&for=pc
