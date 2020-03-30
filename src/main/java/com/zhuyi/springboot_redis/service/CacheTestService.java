@@ -26,7 +26,7 @@ public class CacheTestService {
     @Cacheable(value ="#root.hh1" )
     public void hh1(String name,String address){
 
-        cacheManager.getCache()
+//        cacheManager.getCache()
 
     }
 }
