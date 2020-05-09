@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 //用来描述该类中所有方法使用的缓存名称，当然也可以不使用该注解，直接在具体的缓存注解上配置名称
 @CacheConfig(cacheNames = "test")
 public class CacheTestService {
+    String uu;
     @Autowired
     CacheManager cacheManager;
 
