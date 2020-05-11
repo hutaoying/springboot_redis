@@ -1,5 +1,7 @@
 package com.zhuyi.springboot_redis.jedis;
 
+import com.zhuyi.springboot_redis.jedis.protocol.CommandProtocol;
+
 public class Client {
     private Connection connection;
 
@@ -8,13 +10,13 @@ public class Client {
     }
 
     public String set(String key, String value) {
-        connection.sendCommand();
-        return null;
+        connection.sendCommand(CommandProtocol.Command.SET,SafeEncoder.encode(key),SafeEncoder.encode(value));
+        return connection.getStatusCodeReply();
     }
 
     public String get(String key) {
-        connection.sendCommand();
-        return null;
+        connection.sendCommand(CommandProtocol.Command.GET,SafeEncoder.encode(key));
+        return connection.getStatusCodeReply();
     }
 
 }

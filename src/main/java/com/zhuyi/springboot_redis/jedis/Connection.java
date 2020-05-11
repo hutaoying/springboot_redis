@@ -1,5 +1,7 @@
 package com.zhuyi.springboot_redis.jedis;
 
+import com.zhuyi.springboot_redis.jedis.protocol.CommandProtocol;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -17,9 +19,22 @@ public class Connection {
         this.port = port;
     }
 
-    void sendCommand(){
-
+    Connection sendCommand(CommandProtocol.Command command,byte[] ... args){
+        connection();
+        CommandProtocol.sendCommand(outputStream, command,args);
+        return this;
     }
+
+    public String getStatusCodeReply(){
+        byte[] b =new byte[1024];
+        try {
+            socket.getInputStream().read(b);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new String(b);
+    }
+
 
     public void connection() {
         try {
